@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Rosas y GG</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: transparent;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .contador {
+      font-size: 50px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      margin: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .contador img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    #gg, #rosas {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contador" id="rosas">
+    <img src="https://raw.githubusercontent.com/MartinZbF/contador-rosas-gg/main/assets/images/rosa.png" alt="Rosa TikTok">
+    Rosas: <span id="numeroRosas">0</span>
+  </div>
+
+  <div class="contador" id="gg">
+    <img src="https://raw.githubusercontent.com/MartinZbF/contador-rosas-gg/main/assets/images/gg.png" alt="GG TikTok">
+    GG: <span id="numeroGG">0</span>
+  </div>
+
+  <script>
+    let contadorRosas = 0;
+    let contadorGG = 0;
+
+    // Función para sumar una rosa
+    function sumarRosa() {
+      contadorRosas++;
+      document.getElementById('numeroRosas').innerText = contadorRosas;
+    }
+
+    // Función para sumar un GG
+    function sumarGG() {
+      contadorGG++;
+      document.getElementById('numeroGG').innerText = contadorGG;
+    }
+
+    // Estas funciones se pueden activar de manera manual o automática
+    // A continuación, los simularemos como si fueran eventos de donación (simulamos sumarlos al azar cada 2 segundos)
+
+    setInterval(() => {
+      sumarRosa();  // Simula una rosa
+    }, 5000); // Simula una rosa cada 5 segundos
+
+    setInterval(() => {
+      sumarGG();  // Simula un GG
+    }, 3000); // Simula un GG cada 3 segundos
+  </script>
+</body>
+</html>
+
